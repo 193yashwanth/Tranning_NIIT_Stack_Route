@@ -1,0 +1,10 @@
+git fetch origin main:tmp
+
+git rebase tmp
+
+git push
+
+del
+git rm -r gif-app
+git commit -m "del"
+git push origin main

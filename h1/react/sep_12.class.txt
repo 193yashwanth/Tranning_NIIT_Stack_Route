@@ -1,0 +1,240 @@
+1=>
+class App extends React.Component {
+  render(){
+    return(
+    <div>Hello World!!!</div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+2=>
+class App extends React.Component {
+  render() {
+    var myStyle = {
+      fontSize:100,
+      color: '#FF0000'
+    }
+    return(
+      <div>
+        <h1 style = {myStyle}>Hello World!!!</h1>
+        </div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+3=>
+class App extends React.Component {
+  render() {
+    const num = [];
+      for(var i=1;i<=20;i++) {
+        if (i%2===0){
+          num.push(
+        <div>
+        <ul><li>{i} even</li></ul>
+        </div>
+      );}
+      else{num.push(<div>
+        <ul><li>{i} odd</li></ul>
+        </div>);}
+    }
+    return(
+      <div>{num}</div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+4=>
+class App extends React.Component {
+  render() {
+    const num = new Array();
+      for(var i=1;i<=20;i++) {
+        if (i%2==0){
+          num.push(i+' even');}
+      else{num.push(i+' odd');}
+    }
+    return(
+        <div>{num.map((x) => <li>{x}</li>)}</div>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+5=>
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Content />
+      </div>
+    );
+  }
+}
+
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Component 1</h1>
+      </div>
+    );
+  }
+}
+
+class Content extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Component 2</h1>
+        <p>this is sub content!!!</p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+6=>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      header: "Header from state...",
+      content: "Content from state..."
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.header}</h1>
+        <h2>{this.state.content}</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+7=>
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.headerprop}</h1>
+        <h2>{this.props.contentprop}</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App headerprop = "Header from First Property..."contentprop="Content from Second Property..."/>, document.getElementById('mountNode'));
+
+8=>
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.headerProp}</h1>
+        <h2>{this.props.contentProp}</h2>
+      </div>
+    );
+  }
+}
+
+App.defaultProps ={
+  headerProp: "Header from First Property...",
+  contentProp:"Content from Second Property..."
+}
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+9=>
+class App extends React.Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      data: []
+    }
+    this.setStateHandler = this.setStateHandler.bind(this);
+  };
+  setStateHandler() {
+    var item = "Newitem..."
+    var myArray = this.state.data.slice();
+    myArray.push(item);
+    this.setState({data: myArray})
+  };
+  render() {
+    return (
+      <div>
+        <button onClick = {this.setStateHandler}>SET STATE</button>
+        <h4>State Array: {this.state.data}</h4>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+10=>
+class App extends React.Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      count: 0
+    }
+  };
+  handleClick = () => {
+    this.setState({count: this.state.count +1});
+  };
+  render() {
+    return (
+      <div>
+        <h4>Count: {this.state.count}</h4>
+        <button onClick = {this.handleClick}>Click me</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+11=>
+import React, {component} from 'react';
+class ParentComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    }
+  };
+  handleMessageChange = (event) => {
+    this.setState({message: event.target.value});
+  };
+  render() {
+    return (
+      <div>
+        <h1>Parent Component</h1>
+        <input type="text" value={this.state.message} onChange={this.handleMessageChange} />
+        <ChildComponent message={this.state.message} />
+      </div>
+    );
+  }
+}
+class ChildComponent extends Component {
+  render() {
+    return(
+      <div>
+        <h2>Child Component</h2>
+        <p>Recived message: {this.props.message}</p>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<ParentComponent />, document.getElementById('mountNode'));
+
+12=>

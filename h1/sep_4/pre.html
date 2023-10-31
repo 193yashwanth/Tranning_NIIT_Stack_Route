@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Allow Only One Checkbox to be Checked using jQuery and JavaScript</title>
+</head>
+<body>
+
+    <input type="checkbox" class="checkoption" value="1" > Option1 <br>
+    <input type="checkbox" class="checkoption" value="2" > Option2 <br>
+    <input type="checkbox" class="checkoption" value="3" > Option3 <br>
+    <input type="checkbox" class="checkoption" value="4" > Option4 <br>
+    <input type="checkbox" class="checkoption" value="5" > Option5 <br>
+
+    <!-- Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+         $('.checkoption').click(function() {
+              $('.checkoption').not(this).prop('checked', false);
+         });
+
+    });
+    </script>
+</body>
+</html>

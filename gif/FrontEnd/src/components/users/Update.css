@@ -1,0 +1,79 @@
+@import 
+url('https://fonts.googleapis.com/css?family=Jura:400');
+* { font-family: Jura, Arial; font-weight: 400; }
+body { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6,p { margin: 0; }
+h2 {
+  
+  margin-bottom: 5px;
+  text-align: center;
+  text-shadow: 0 4px 16px #fff;
+  font-size: 35px;
+  font-weight: 200;
+}
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: Gradient 5s ease infinite;
+  }
+  
+  .register-form {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-gap: 10px;
+    margin: auto 0;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    box-shadow: 0 32px 64px rgba(0,0,0,0.2);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ccc;
+ 
+  }
+  
+  .register-form input {
+
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Jura, Arial; font-weight: 400; 
+    &:hover {
+      border: 1px solid #aaf;}
+      
+  }
+  
+  .register-form button {
+      color: black;
+      padding: 10px;
+      border:1px solid rgba(0,0,0,0);
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      &:hover {
+        background-color: #eef;
+        border: 1px solid #aaf;
+      }
+  }
+  
+  
+  .register-form button:hover {
+    background-color: #0056b3;
+  }
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+    50% {
+      background-position: 100% 50%
+    }
+    100% {
+      background-position: 0% 50%
+    }
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Input in Array</title>
+</head>
+<body>
+    <form id="inputForm">
+        <input type="text" id="inputField">
+        <button type="button" id="addButton">Add to Array</button>
+    </form>
+    <ul id="outputList"></ul>
+    
+    <script>
+        // Create an empty array to store input values
+        var inputArray = [];
+
+        // Get references to HTML elements
+        var inputField = document.getElementById('inputField');
+        var addButton = document.getElementById('addButton');
+        var outputList = document.getElementById('outputList');
+
+        // Add an event listener to the button
+        addButton.addEventListener('click', function() {
+            var inputValue = inputField.value;
+            
+            // Check if the input is not empty before adding it to the array
+            if (inputValue.trim() !== '') {
+                inputArray.push(inputValue);
+                inputField.value = ''; // Clear the input field
+                displayArray(); // Display the updated array
+            }
+        });
+
+        // Function to display the array
+        function displayArray() {
+            outputList.innerHTML = ''; // Clear the list
+
+            // Loop through the array and create list items to display the values
+            for (var i = 0; i < inputArray.length; i++) {
+                var listItem = document.createElement('li');
+                listItem.textContent = inputArray[i];
+                outputList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>

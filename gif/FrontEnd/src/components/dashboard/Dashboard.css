@@ -1,0 +1,77 @@
+/* Dashboard Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  nav a, button {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  button {
+    background-color: #ff5722;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Links Hover Effect */
+  nav a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  /* Container Styling (if needed) */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Add more styles as needed */
+  
+  .gifs {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gif{
+    padding: 0 5px;
+    margin-top: 15px;
+  
+  }
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  

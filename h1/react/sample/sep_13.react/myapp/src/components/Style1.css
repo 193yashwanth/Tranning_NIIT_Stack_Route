@@ -1,0 +1,10 @@
+.in{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+.in type{
+margin-left: 20px;
+}

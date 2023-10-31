@@ -1,0 +1,238 @@
+1=>
+function Hello() {
+  return <div>hello react!</div>;
+}
+ReactDOM.render(
+  <Hello />,
+  document.getElementById('mountNode'),
+);
+
+2=> 
+function Button() {
+  return <button>Test</button>;
+}
+ReactDOM.render(
+  <Button />,
+  document.getElementById('mountNode'),
+);
+
+4=>
+function Button() {
+  const [counter, setCounter ] = useState(0);
+  return <button>click</button>;
+}
+ReactDOM.render(
+  <Button />,
+  document.getElementById('mountNode'),
+);
+
+5=>
+function Button() {
+  const [counter, setCounter ] = useState(0);
+  return <button onClick={() => setCounter(counter + 1)}>{counter}</button>;
+}
+ReactDOM.render(
+  <Button />,
+  document.getElementById('mountNode'),
+);
+
+6=>
+function Button() {
+  const [counter, setCounter ] = useState(0);
+  const handleClick = () => setCounter(counter +1);
+  
+  return ( 
+    <button onClick={handleClick} >
+      {counter}</button>);
+}
+ReactDOM.render(
+  <Button />,
+  document.getElementById('mountNode'),
+);
+
+7=>
+function Button() {
+  const [counter, setCounter ] = useState(0);
+  const handleClick = () => setCounter(counter +1);
+  
+  return ( 
+    <button onClick={handleClick} >
+      {counter}</button>);
+}
+function Display(){
+  return (
+  <div>...</div>
+  );
+}
+ReactDOM.render(
+  [<Button />, <Display />],
+  document.getElementById('mountNode'),
+);
+
+8=>
+function Button() {
+  const [counter, setCounter ] = useState(0);
+  const handleClick = () => setCounter(counter +1);
+  
+  return ( 
+    <button onClick={handleClick} >
+      {counter}</button>);
+}
+function Display(){
+  return (
+  <div>...</div>
+  );
+}
+function App() {
+return(
+<div>
+  <Button />
+  <Display />
+</div>
+);
+}
+ReactDOM.render(
+<App/>,
+  document.getElementById('mountNode'),
+);
+
+9=>
+function Button() {
+  //const [counter, setCounter ] = useState(0);
+  return ( 
+    <button onClick={ () =>{}} >
+      +1
+      </button>
+    );
+}
+function Display(props){
+  return (
+  <div>{props.message}</div>
+  );
+}
+function App() {
+  const [counter, setCounter ] = useState(0);
+return(
+<div>
+  <Button />
+  <Display message={counter}/>
+</div>
+);
+}
+ReactDOM.render(
+<App/>,
+  document.getElementById('mountNode'),
+);
+
+10=>
+function Button(props) {
+  //const [counter, setCounter ] = useState(0);
+  return ( 
+    <button onClick={props.onClickFunction} >
+      +1
+      </button>
+    );
+}
+function Display(props){
+  return (
+  <div>{props.message}</div>
+  );
+}
+function App() {
+  const [counter, setCounter ] = useState(0);
+  const incrementCounter = ()=> setCounter(counter+1)
+return(
+<div>
+  <Button onClickFunction ={incrementCounter}/>
+  <Display message={counter}/>
+</div>
+);
+}
+ReactDOM.render(
+<App/>,
+  document.getElementById('mountNode'),
+);
+
+11=>
+function Button(props) {
+  //const [counter, setCounter ] = useState(0);
+  return ( 
+    <button onClick={props.onClickFunction} >
+      +1
+      </button>
+    );
+}
+function Display(props){
+  return (
+  <div>{props.message}</div>
+  );
+}
+function App() {
+  const [counter, setCounter ] = useState(0);
+  const incrementCounter = ()=> setCounter(counter+1)
+return(
+<div>
+  <Button onClickFunction ={incrementCounter}/>
+  <Display message={counter}/>
+</div>
+);
+}
+ReactDOM.render(
+<App/>,
+  document.getElementById('mountNode'),
+);
+
+12=>
+function Button(props) {
+  return (<button onClick={props.onClickFunction}>+{props.increment}</button>);
+}
+
+function Display(props) {
+  return <div>{props.message}</div>;
+}
+
+function App() {
+  const [counter, setCounter] = useState(0);
+  const incrementCounter = (incrementValue) => setCounter(counter + incrementValue);
+  
+  return (
+    <div>
+      <Button onClickFunction={() => incrementCounter(1)} increment={1}/>
+      <Button onClickFunction={() => incrementCounter(5)} increment={5}/>
+      <Button onClickFunction={() => incrementCounter(10)} increment={10}/>
+      <Button onClickFunction={() => incrementCounter(100)} increment={100}/>
+      <Display message={counter + 1} />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+13=>
+function Button(props) {
+  const handleClick=() => props.onClickFunction(props.increment);
+  return (<button onClick={handleClick}>+{props.increment}</button>);
+}
+
+function Display(props) {
+  return <div>{props.message}</div>;
+}
+
+function App() {
+  const [counter, setCounter] = useState(0);
+  const incrementCounter = (incrementValue) => setCounter(counter + incrementValue);
+  
+  return (
+    <div>
+      <Button onClickFunction={ incrementCounter} increment={1}/>
+      <Button onClickFunction={incrementCounter} increment={5}/>
+      <Button onClickFunction={ incrementCounter} increment={10}/>
+      <Button onClickFunction={ incrementCounter} increment={100}/>
+      <Display message={counter} />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('mountNode'));
+
+14=>

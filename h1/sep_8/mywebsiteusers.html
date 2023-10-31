@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my website user</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Faster+One"> 
+    <link rel="stylesheet" href="myweb.css">
+</head>
+<body>
+    <header></header>
+    <section></section>
+</body>
+<script>
+    const header = document.querySelector('header');
+    const section = document.querySelector('section');
+    let requestURL = 'https://reqres.in/api/users?page=1';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+        const websiteUsers = request.response;
+        populateHeader(websiteUsers);
+        showUsers(websiteUsers);
+    }
+    function populateHeader(jsonObj) {
+        const myH1 = document.createElement('h1') //<h1></h1>
+        myH1.textContent = "Users of my Website"; //<h1>Users of my Website</h1>
+        header.appendChild(myH1);
+    const mypara = document.createElement('p');
+    mypara.textContent = 'Total Users: ' + jsonObj['total'] + '// Total pages: ' +jsonObj['total_pages'];
+    header.appendChild(mypara);
+    }
+
+    function showUsers(jsonObj) {
+        const jsonData = jsonObj['data'];
+        for (let i=0; i<jsonData.length; i++) {
+            const myArticle = document.createElement('article');
+            const myH2 = document.createElement('p');
+            const mypara1 = document.createElement('p');
+            const mypara2 = document.createElement('p');
+            const mypara3 = document.createElement('p');
+            const image = document.createElement('img');
+
+            myH2.textContent = jsonData[i].id;
+            mypara1.textContent = 'First Name: ' + jsonData[i].first_name;
+            mypara2.textContent = 'Last Name: ' + jsonData[i].last_name;
+            mypara3.textContent = 'Email: ' + jsonData[i].email;
+            image.src = jsonData[i].avatar;
+
+            myArticle.appendChild(myH2);
+            myArticle.appendChild(mypara1);
+            myArticle.appendChild(mypara2);
+            myArticle.appendChild(mypara3);
+            myArticle.appendChild(image);
+
+            section.appendChild(myArticle);
+        }
+    }
+
+
+</script>
+</html>

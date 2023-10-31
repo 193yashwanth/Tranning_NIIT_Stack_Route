@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+</head>
+<body>
+<h2>Enter two numbers</h2>
+<form>
+<label>Number 1 : </label>
+<input type="text" id="number1"> <br>
+<label>Number 2 : </label>
+<input type="text" id="number2"> <br>
+</form>
+<button onclick="addTwoNumbers()">Add</button>
+<button onclick="minusTwoNumbers()">Subtract</button>
+<button onclick="multiplyTwoNumbers()">Multiply</button>
+
+
+<button onclick="divideTwoNumbers()">Divide</button>
+
+<p id="answer"></p>
+
+<script>
+function addTwoNumbers(){
+num1 = parseInt(document.getElementById('number1').value);
+num2 = parseInt(document.getElementById('number2').value);
+
+// checking if the user entered valid numbers
+if(!isNaN(num1) && !isNaN(num2)){
+document.getElementById('answer').innerHTML = num1 + num2;
+}
+else{
+document.getElementById('answer').innerHTML = 'Enter numbers';
+}
+}
+
+function minusTwoNumbers(){
+num1 = parseInt(document.getElementById('number1').value);
+num2 = parseInt(document.getElementById('number2').value);
+
+if(!isNaN(num1) && !isNaN(num2)){
+document.getElementById('answer').innerHTML = num1 - num2;
+}
+else{
+document.getElementById('answer').innerHTML = 'Enter numbers';
+}
+}
+
+function multiplyTwoNumbers(){
+num1 = parseInt(document.getElementById('number1').value);
+num2 = parseInt(document.getElementById('number2').value);
+
+if(!isNaN(num1) && !isNaN(num2)){
+document.getElementById('answer').innerHTML = num1 * num2;
+}
+else{
+document.getElementById('answer').innerHTML = 'Enter numbers';
+}
+}
+
+function divideTwoNumbers(){
+num1 = parseInt(document.getElementById('number1').value);
+num2 = parseInt(document.getElementById('number2').value);
+
+if(!isNaN(num1) && !isNaN(num2)){
+document.getElementById('answer').innerHTML = num1 / num2;
+}
+else{
+document.getElementById('answer').innerHTML = 'Enter numbers';
+}
+}
+</script>
+</body>
+</html>

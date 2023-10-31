@@ -1,0 +1,9 @@
+{
+    "employee":[
+        {"id": 1, "phone_number": 1234567890, "employee_id": 123, "base_location": "HYD"},
+        {"id": 2, "phone_number": 1234567891, "employee_id": 124, "base_location": "AP"},
+        {"id": 3, "phone_number": 1234567892, "employee_id": 125, "base_location": "TS"},
+        {"id": 4, "phone_number": 1234567893, "employee_id": 126, "base_location": "AG"},
+        {"id": 5, "phone_number": 1234567894, "employee_id": 127, "base_location": "XAI"}
+    ]
+}

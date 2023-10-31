@@ -1,0 +1,59 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    /* Global styles */
+    body {
+    font-family: Arial, sans-serif;
+    }
+    
+    /* Header styles */
+    header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    }
+    
+    /* Navigation styles */
+    nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    }
+    
+    nav ul {
+    list-style: none;
+    }
+    
+    nav li {
+    display: inline;
+    margin-right: 20px;
+    }
+    
+    nav a {
+    text-decoration: none;
+    color: #fff;
+    }
+    
+    /* Main content styles */
+    main {
+    padding: 20px;
+    
+    }
+    
+    section {
+    margin: 20px;
+    }
+    
+    /* Footer styles */
+    footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    }

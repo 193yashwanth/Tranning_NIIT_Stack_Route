@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="Post", name="sample">
+        <br>
+        name: <input type="text", name="name">
+        address: <input type="text", name="address">
+        phonenumber: <input type="number" name="number">
+        <br><br>
+        <input type="button" onclick="addvalue()" value="add"><hr>
+        <table border="1" class="table" id="tab">
+            <thead>
+                <th>name </th>
+                <th>address</th>
+                <th>phonenumber</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function addvalue(){
+            var name = document.sample.name.value;
+            var address = document.sample.address.value;
+            var phonenumber = document.sample.number.value;
+
+            var tr = document.createElement('tr');
+
+            var td1 = tr.appendChild(document.createElement('td'));
+            var td2 = tr.appendChild(document.createElement('td'));
+            var td3 = tr.appendChild(document.createElement('td'));
+
+            td1.innerHTML = name;
+            td2.innerHTML = address;
+            td3.innerHTML = phonenumber;
+
+            document.getElementById('tab').appendChild(tr);
+        }
+    </script>
+</body>
+</html>
