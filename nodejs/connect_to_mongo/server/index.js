@@ -7,7 +7,9 @@ const app= express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb://localhost:27017/cgidb");
+mongoose.connect("mongodb://localhost:27017/cgidb").then(()=>
+    console.log("DB connected")
+)
 
 app.get('/', (req,res)=>{
     UserModels.find({})
@@ -15,12 +17,12 @@ app.get('/', (req,res)=>{
     .catch((err) => res.json(err))
 })
 
-app.post('/post', async(req,res)=>{
-    const user = req.body;
-    const newUser = new UserModels(user)
+app.post('/userdata', async(req,res)=>{
+    const {name,age} = req.body;
+    const newUser = new UserModels({name,age})
     await newUser.save()
-    console.log(user);
-    res.json(user)
+    console.log({name,age});
+    res.json(newUser)
 
 })
 
